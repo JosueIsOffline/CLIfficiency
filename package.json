@@ -1,8 +1,8 @@
 {
   "name": "clifficiency",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A CLI Pomodoro timer with presets and notifications",
+  "main": "dist/index.js",
   "scripts": {
     "start": "ts-node src/index.ts",
     "dev": "nodemon src/index.ts",
@@ -15,13 +15,20 @@
     "type": "git",
     "url": "git+https://github.com/JosueIsOffline/CLIfficiency.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "cli",
+    "pomodoro",
+    "timer"
+  ],
+  "author": "Josué Hernández",
+  "license": "MIT",
   "type": "commonjs",
   "bugs": {
     "url": "https://github.com/JosueIsOffline/CLIfficiency/issues"
   },
+  "files": [
+    "dist"
+  ],
   "homepage": "https://github.com/JosueIsOffline/CLIfficiency#readme",
   "devDependencies": {
     "@types/node": "^24.0.4",
