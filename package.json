@@ -8,6 +8,9 @@
     "dev": "nodemon src/index.ts",
     "build": "tsc"
   },
+  "bin": {
+    "cliff": "dist/index.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JosueIsOffline/CLIfficiency.git"

@@ -70,7 +70,6 @@ export class PomodoroTimer extends EventEmitter {
         this.currentPhase = "shortBreak";
       } else if (this.currentSession === this.sessionsBeforeLongBreak) {
         this.currentSession = 1;
-
         this.currentPhase = "longBreak";
       }
     } else if (

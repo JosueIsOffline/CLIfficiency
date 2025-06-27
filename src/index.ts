@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import path from "path";
 import fs from "fs";
 import os from "os";
@@ -32,7 +33,6 @@ async function ensureSoundInLibrary(soundFileName: string) {
 }
 
 const selected = presets[options.preset] ?? presets["default"];
-console.log(selected);
 
 const workDuration =
   (options.work ? parseInt(options.work) : selected.work) * 60;
@@ -43,8 +43,6 @@ const longBreakDuration =
 const sessionsBeforeLongBreak = options.sessions
   ? parseInt(options.sessions)
   : selected.sessions;
-
-console.log(workDuration);
 
 const friendlyNames: Record<"work" | "shortBreak" | "longBreak", string> = {
   work: "Work",
