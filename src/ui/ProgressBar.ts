@@ -1,3 +1,4 @@
+import ansiColors from "ansi-colors";
 import { SingleBar, Presets } from "cli-progress";
 
 export class ProgressBar {
@@ -7,10 +8,9 @@ export class ProgressBar {
   constructor() {
     this.bar = new SingleBar(
       {
-        format:
-          "{phase} [{bar}] {percentage}% | (#{session}) {remaining} time remaining",
-        barCompleteChar: "█",
-        barIncompleteChar: "▁",
+        format: `${ansiColors.bold.magentaBright.italic("{phase}")} ${ansiColors.magenta("[{bar}]")} ${ansiColors.bold.magentaBright.italic("{percentage}%")} ${ansiColors.bold.magentaBright.italic("| (#{session}) {remaining} time remaining")}`,
+        barCompleteChar: "\u2588",
+        barIncompleteChar: "\u2591",
         hideCursor: true,
       },
       Presets.shades_classic,
@@ -44,5 +44,14 @@ export class ProgressBar {
     const min = String(Math.floor(seconds / 60)).padStart(2, "0");
     const sec = String(seconds % 60).padStart(2, "0");
     return `${min}:${sec}`;
+  }
+
+  getColoredPhase(phase: string): string {
+    switch (phase) {
+      case "work":
+        return ansiColors.red.bold("Work");
+      default:
+        return phase;
+    }
   }
 }
